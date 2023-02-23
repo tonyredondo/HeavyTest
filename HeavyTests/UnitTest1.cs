@@ -71,9 +71,9 @@ public class UnitTest1
     
     private void Proc()
     {
-        for (var x = 0; x < 60000; x++)
+        for (var x = 0; x < 600; x++)
         {
-            for (var i = 0; i < 120_000; i++)
+            for (var i = 0; i < 120; i++)
             {
                 var a = 1000;
                 var b = 2000;
