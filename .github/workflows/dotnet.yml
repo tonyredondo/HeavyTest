@@ -51,6 +51,7 @@ jobs:
 
 
     - uses: actions/upload-artifact@v3
+      if: always()
       with:
         name: dd-trace-logs
         path: /var/log/datadog/dotnet/
