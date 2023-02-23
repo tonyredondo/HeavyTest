@@ -11,6 +11,7 @@ on:
 
 env:
   DD_CIVISIBILITY_AGENTLESS_ENABLED: true
+  DD_TRACE_DEBUG: true
 
 jobs:
   build:
@@ -51,5 +52,5 @@ jobs:
 
     - uses: actions/upload-artifact@v3
       with:
-        name: logs
+        name: dd-trace-logs
         path: /var/log/datadog/dotnet/
