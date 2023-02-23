@@ -30,7 +30,9 @@ jobs:
 
 
     - name: Create log folder
-      run: mkdir -p /var/log/datadog/dotnet
+      run: |
+        sudo mkdir -p /var/log/datadog/dotnet
+        sudo chmod -R +777 /var/log/datadog/dotnet
 
 
 
