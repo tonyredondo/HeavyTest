@@ -26,7 +26,14 @@ jobs:
         
     - name: Install dd-trace tool
       run: dotnet tool update -g dd-trace
-        
+
+
+
+    - name: Create log folder
+      run: mkdir -p /var/log/datadog/dotnet
+
+
+
     - name: Restore dependencies
       run: dotnet restore
 
@@ -37,3 +44,10 @@ jobs:
       run: dd-trace ci run -- dotnet test --no-build --verbosity normal
       env:
         DD_API_KEY: ${{ secrets.DD_API_KEY }}
+
+
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: logs
+        path: /var/log/datadog/dotnet/
